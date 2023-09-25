@@ -13,22 +13,23 @@ public class Beneficiary : ControllerBase
     public Beneficiary(IMediator mediator) => _mediator = mediator;
     
     [HttpPost("add")]
-    public async Task<ActionResult> AddBeneficiary([FromBody] AddBeneficiary.Request request)
+    public async Task<ActionResult> AddBeneficiary([FromBody] AddBeneficiary.RequestB requestB)
     {
-        var add = await _mediator.Send(request);
+        var add = await _mediator.Send(requestB);
         return Ok();
     }
     
     [HttpPut("update")]
-    public void UpdateBeneficiary()
+    public async Task<ActionResult> UpdateBeneficiary([FromBody] UpdateBeneficiary.RequestBu requestBu)
     {
-        
+        await _mediator.Send(requestBu);
+        return Ok("Success");
     }
     
     [HttpDelete("remove/{employeeNumber:int}")]
-    public async Task<ActionResult> RemoveBeneficiary([FromBody] RemoveBeneficiary.Request request)
+    public async Task<ActionResult> RemoveBeneficiary(int employeeNumber, [FromBody] RemoveBeneficiary.RequestBr request)
     {
-        var info = new RemoveBeneficiary.Request { EmployeeNumber = request.EmployeeNumber, BeneficiaryName  = request.BeneficiaryName };
+        var info = new RemoveBeneficiary.RequestBr { EmployeeNumber = employeeNumber, BeneficiaryId  = request.BeneficiaryId };
         var remove = await _mediator.Send(info);
         return Ok();
     }

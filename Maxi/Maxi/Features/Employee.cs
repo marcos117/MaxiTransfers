@@ -16,22 +16,23 @@ public class Employee : ControllerBase
     
     
     [HttpPost("add")]
-    public async Task<ActionResult> AddEmployee([FromBody] AddEmployee.Request request)
+    public async Task<ActionResult> AddEmployee([FromBody] AddEmployee.RequestE requestE)
     {
-        var add = await _mediator.Send(request);
-        return Ok();
+        await _mediator.Send(requestE);
+        return Ok("Success");
     }
     
     [HttpPut("update")]
-    public void UpdateEmployee(int employeeNumber)
+    public async Task<ActionResult> UpdateEmployee([FromBody] UpdateEmployee.RequestEu requestEu)
     {
-        
+        await _mediator.Send(requestEu);
+        return Ok("Success");
     }
 
     [HttpDelete("remove/{employeeNumber:int}")]
     public async Task<ActionResult> RemoveEmployee(int employeeNumber)
     {
-        var request = new RemoveEmployee.Request { EmployeeNumber = employeeNumber};
+        var request = new RemoveEmployee.RequestEr { EmployeeNumber = employeeNumber};
         var remove = await _mediator.Send(request);
         return Ok();
     }

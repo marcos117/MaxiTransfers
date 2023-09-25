@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\MaxiTransfers\\Maxi\\Maxi\\Maxi.csproj": {}
+    "C:\\OtroMaxi\\MaxiTransfers\\Maxi\\Maxi\\Maxi.csproj": {}
   },
   "projects": {
-    "C:\\MaxiTransfers\\Maxi\\Data\\Data.csproj": {
+    "C:\\OtroMaxi\\MaxiTransfers\\Maxi\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\MaxiTransfers\\Maxi\\Data\\Data.csproj",
+        "projectUniqueName": "C:\\OtroMaxi\\MaxiTransfers\\Maxi\\Data\\Data.csproj",
         "projectName": "Data",
-        "projectPath": "C:\\MaxiTransfers\\Maxi\\Data\\Data.csproj",
+        "projectPath": "C:\\OtroMaxi\\MaxiTransfers\\Maxi\\Data\\Data.csproj",
         "packagesPath": "C:\\Users\\mluev\\.nuget\\packages\\",
-        "outputPath": "C:\\MaxiTransfers\\Maxi\\Data\\obj\\",
+        "outputPath": "C:\\OtroMaxi\\MaxiTransfers\\Maxi\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mluev\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,9 +40,17 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Microsoft.EntityFrameworkCore.InMemory": {
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.22, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.22, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
             }
           },
           "imports": [
@@ -57,6 +65,9 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
@@ -65,14 +76,14 @@
         }
       }
     },
-    "C:\\MaxiTransfers\\Maxi\\Maxi\\Maxi.csproj": {
+    "C:\\OtroMaxi\\MaxiTransfers\\Maxi\\Maxi\\Maxi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\MaxiTransfers\\Maxi\\Maxi\\Maxi.csproj",
+        "projectUniqueName": "C:\\OtroMaxi\\MaxiTransfers\\Maxi\\Maxi\\Maxi.csproj",
         "projectName": "Maxi",
-        "projectPath": "C:\\MaxiTransfers\\Maxi\\Maxi\\Maxi.csproj",
+        "projectPath": "C:\\OtroMaxi\\MaxiTransfers\\Maxi\\Maxi\\Maxi.csproj",
         "packagesPath": "C:\\Users\\mluev\\.nuget\\packages\\",
-        "outputPath": "C:\\MaxiTransfers\\Maxi\\Maxi\\obj\\",
+        "outputPath": "C:\\OtroMaxi\\MaxiTransfers\\Maxi\\Maxi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mluev\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -89,8 +100,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\MaxiTransfers\\Maxi\\Data\\Data.csproj": {
-                "projectPath": "C:\\MaxiTransfers\\Maxi\\Data\\Data.csproj"
+              "C:\\OtroMaxi\\MaxiTransfers\\Maxi\\Data\\Data.csproj": {
+                "projectPath": "C:\\OtroMaxi\\MaxiTransfers\\Maxi\\Data\\Data.csproj"
               }
             }
           }
@@ -105,6 +116,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.7.1, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.0, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[12.1.1, )"

@@ -1,30 +1,49 @@
-﻿using MediatR;
+﻿using Data.Infrastructure;
+using Data.Models;
+using MediatR;
 
 namespace Maxi.Features.Beneficiaries;
 
 public class AddBeneficiary
 {
-    public class Request : IRequest<Response>
+    public class RequestB : IRequest<ResponseB>
     {
-        public string Name { get; set; }
-        public string LastName { get; set; }
-        public string DateOfBirth { get; set; }
-        public string CURP { get; set; }
-        public int SSN { get; set; }
-        public string Phone { get; set; }
-        public string Nacionality { get; set; }
-        public int ParticipationPercentage { get; set; }
+        public string Name { get; init; }  = string.Empty;
+        public string LastName { get; init; }  = string.Empty;
+        public DateTime DateOfBirth { get; init; } = DateTime.MaxValue;
+        public string Curp { get; init; }  = string.Empty;
+        public int Ssn { get; init; }
+        public string Phone { get; init; }  = string.Empty;
+        public string Nacionality { get; init; }  = string.Empty;
+        public int ParticipationPercentage { get; init; }
     }
     
-    public class Add : IRequestHandler<Request, Response>
+    public class Add : IRequestHandler<RequestB, ResponseB>
     {
-        public Task<Response> Handle(Request request, CancellationToken cancellationToken)
+        public async Task<ResponseB> Handle(RequestB requestB, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            // await using (var context = new DataBaseContext())
+            // {
+            //     var request = new BeneficiaryDto()
+            //     {
+            //         Nacionality = requestB.Nacionality,
+            //         Name = requestB.Name,
+            //         Phone = requestB.Phone,
+            //         LastName = requestB.LastName,
+            //         Ssn = requestB.Ssn,
+            //         Curp = requestB.Curp,
+            //         DateOfBirth = requestB.DateOfBirth,
+            //         ParticipationPercentage = requestB.ParticipationPercentage
+            //     };
+            //     context.Add(request);
+            //     await context.SaveChangesAsync(cancellationToken);
+            // }
+
+            return new ResponseB();
         }
     }
 
-    public class Response
+    public class ResponseB
     {
     
     }

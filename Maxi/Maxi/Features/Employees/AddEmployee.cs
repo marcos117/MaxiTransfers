@@ -1,30 +1,49 @@
-﻿using MediatR;
+﻿using Data.Infrastructure;
+using Data.Models;
+using MediatR;
 
 namespace Maxi.Features.Employees;
 
 public class AddEmployee
 {
-    public class Request : IRequest<Response>
+    public class RequestE : IRequest<ResponseE>
     {
-        public string Name { get; set; }
-        public string LastName { get; set; }
-        public string DateOfBirth { get; set; }
-        public int EmployeeNumber { get; set; }
-        public string CURP { get; set; }
-        public int SSN { get; set; }
-        public string Phone { get; set; }
-        public string Nacionality { get; set; }
+        public string Name { get; init; } = string.Empty;
+        public string LastName { get; init; } = string.Empty;
+        public DateTime DateOfBirth { get; init; } = DateTime.MaxValue;
+        public int EmployeeNumber { get; init; }
+        public string Curp { get; init; } = string.Empty;
+        public int Ssn { get; init; }
+        public string Phone { get; init; } = string.Empty;
+        public string Nacionality { get; init; } = string.Empty;
     }
     
-    public class Add : IRequestHandler<Request, Response>
+    public class Add : IRequestHandler<RequestE, ResponseE>
     {
-        public Task<Response> Handle(Request request, CancellationToken cancellationToken)
+        public async Task<ResponseE> Handle(RequestE requestE, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            using (var context = new DataBaseContext())
+            {
+                var request = new EmployeeDto()
+                {
+                    Nacionality = requestE.Nacionality,
+                    Name = requestE.Name,
+                    Phone = requestE.Phone,
+                    EmployeeNumber = requestE.EmployeeNumber,
+                    LastName = requestE.LastName,
+                    Ssn = requestE.Ssn,
+                    Curp = requestE.Curp,
+                    DateOfBirth = requestE.DateOfBirth
+                };
+                context.Add(request);
+                await context.SaveChangesAsync(cancellationToken);
+            }
+
+            return new ResponseE();
         }
     }
 
-    public class Response
+    public class ResponseE
     {
     
     }
