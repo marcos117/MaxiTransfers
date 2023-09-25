@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maxi", "Maxi\Maxi.csproj", "{8FD1F5B0-10CB-45F5-931C-5F881ADA6EF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{C9D84C83-5F94-47D5-A741-E824488DAE26}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{7BCCF0B5-C006-4AFA-85C9-4306A7177E41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,9 +14,9 @@ Global
 		{8FD1F5B0-10CB-45F5-931C-5F881ADA6EF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FD1F5B0-10CB-45F5-931C-5F881ADA6EF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FD1F5B0-10CB-45F5-931C-5F881ADA6EF2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C9D84C83-5F94-47D5-A741-E824488DAE26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C9D84C83-5F94-47D5-A741-E824488DAE26}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C9D84C83-5F94-47D5-A741-E824488DAE26}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C9D84C83-5F94-47D5-A741-E824488DAE26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BCCF0B5-C006-4AFA-85C9-4306A7177E41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BCCF0B5-C006-4AFA-85C9-4306A7177E41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BCCF0B5-C006-4AFA-85C9-4306A7177E41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BCCF0B5-C006-4AFA-85C9-4306A7177E41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

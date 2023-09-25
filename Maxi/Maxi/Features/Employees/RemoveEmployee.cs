@@ -1,23 +1,36 @@
-﻿using MediatR;
+﻿using Maxi.Features.Beneficiaries;
+using Maxi.Features.Models;
+using Maxi.Infrastructure;
+using MediatR;
 
 namespace Maxi.Features.Employees;
 
 public class RemoveEmployee
 {
-    public class Request : IRequest<Response>
+    public class RequestEr : IRequest<ResponseEr>
     {
-        public int EmployeeNumber { get; set; }
+        public int EmployeeNumber { get; init; }
     }
     
-    public class Remove : IRequestHandler<Request, Response>
+    public class Remove : IRequestHandler<RequestEr, ResponseEr>
     {
-        public Task<Response> Handle(Request request, CancellationToken cancellationToken)
+        public async Task<ResponseEr> Handle(RequestEr requestEr, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            await using (var context = new DataBaseContext())
+            {
+                var request = new EmployeeDto()
+                {
+                    EmployeeNumber = requestEr.EmployeeNumber,
+                };
+                context.Remove(request);
+                await context.SaveChangesAsync(cancellationToken);
+            }
+
+            return new ResponseEr();
         }
     }
 
-    public class Response
+    public class ResponseEr
     {
     
     }

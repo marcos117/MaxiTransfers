@@ -16,10 +16,10 @@ public class Employee : ControllerBase
     
     
     [HttpPost("add")]
-    public async Task<ActionResult> AddEmployee([FromBody] AddEmployee.Request request)
+    public async Task<ActionResult> AddEmployee([FromBody] AddEmployee.RequestE requestE)
     {
-        var add = await _mediator.Send(request);
-        return Ok();
+        await _mediator.Send(requestE);
+        return Ok("Success");
     }
     
     [HttpPut("update")]
@@ -31,7 +31,7 @@ public class Employee : ControllerBase
     [HttpDelete("remove/{employeeNumber:int}")]
     public async Task<ActionResult> RemoveEmployee(int employeeNumber)
     {
-        var request = new RemoveEmployee.Request { EmployeeNumber = employeeNumber};
+        var request = new RemoveEmployee.RequestEr { EmployeeNumber = employeeNumber};
         var remove = await _mediator.Send(request);
         return Ok();
     }

@@ -1,4 +1,5 @@
-using Data;
+using System.Configuration;
+using Maxi.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,10 +10,12 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<Database>(opt =>
-    opt.UseInMemoryDatabase("TodoList"));
+// builder.Services.AddDbContext<Database>(opt =>
+//     opt.UseInMemoryDatabase("TodoList"));
 
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
+
+
 
 var app = builder.Build();
 
