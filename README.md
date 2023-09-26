@@ -15,14 +15,12 @@
 
 ## Descripción y contexto
 ---
-Esto es un archivo README. Debe contener la documentación de soporte uso de la herramienta digital. Las siguientes secciones son las secciones recomendadas que debes poner incluir en cualquier herramienta digital. Puedes descargar este archivo para que te sirva como plantilla.
-
-Asegúrate de empezar este archivo con una breve descripción sobre las funcionalidades y contexto de la herramienta digital. Sé conciso y al grano.
+El proyecto en cuestión es una base para una prueba técnica de MaxiTransfers, el cual se hará una actulización mas completa y así agregar su base de datos.
 
  	
 ## Guía de instalación
 ---
-La aplicación se debe de descargar desde el branch 
+La aplicación se debe de descargar desde el branch "features/validators" ya que este cuenta con el código correcto a ser utilizado.
 
 ### Dependencias
 Este código escrito con Asp.Net c# puede ser utilizado en el código base hecho en WindowsForms.
