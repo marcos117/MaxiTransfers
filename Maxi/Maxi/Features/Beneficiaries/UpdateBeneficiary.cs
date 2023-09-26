@@ -14,7 +14,7 @@ public class UpdateBeneficiary
         public string Curp { get; init; }  = string.Empty;
         public int Ssn { get; init; }
         public string Phone { get; init; }  = string.Empty;
-        public string Nacionality { get; init; }  = string.Empty;
+        public string Nationality { get; init; }  = string.Empty;
         public int ParticipationPercentage { get; init; }
     }
 
@@ -26,7 +26,7 @@ public class UpdateBeneficiary
             {
                 var request = new BeneficiaryDto()
                 {
-                    Nacionality = requestBu.Nacionality,
+                    Nationality = requestBu.Nationality,
                     Name = requestBu.Name,
                     Phone = requestBu.Phone,
                     LastName = requestBu.LastName,

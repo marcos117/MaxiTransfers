@@ -14,7 +14,7 @@ public class AddBeneficiary
         public string Curp { get; init; }  = string.Empty;
         public int Ssn { get; init; }
         public string Phone { get; init; }  = string.Empty;
-        public string Nacionality { get; init; }  = string.Empty;
+        public string Nationality { get; init; }  = string.Empty;
         public int ParticipationPercentage { get; init; }
     }
     
@@ -22,22 +22,22 @@ public class AddBeneficiary
     {
         public async Task<ResponseB> Handle(RequestB requestB, CancellationToken cancellationToken)
         {
-            // await using (var context = new DataBaseContext())
-            // {
-            //     var request = new BeneficiaryDto()
-            //     {
-            //         Nacionality = requestB.Nacionality,
-            //         Name = requestB.Name,
-            //         Phone = requestB.Phone,
-            //         LastName = requestB.LastName,
-            //         Ssn = requestB.Ssn,
-            //         Curp = requestB.Curp,
-            //         DateOfBirth = requestB.DateOfBirth,
-            //         ParticipationPercentage = requestB.ParticipationPercentage
-            //     };
-            //     context.Add(request);
-            //     await context.SaveChangesAsync(cancellationToken);
-            // }
+            await using (var context = new DataBaseContext())
+            {
+                var request = new BeneficiaryDto()
+                {
+                    Nationality = requestB.Nationality,
+                    Name = requestB.Name,
+                    Phone = requestB.Phone,
+                    LastName = requestB.LastName,
+                    Ssn = requestB.Ssn,
+                    Curp = requestB.Curp,
+                    DateOfBirth = requestB.DateOfBirth,
+                    ParticipationPercentage = requestB.ParticipationPercentage
+                };
+                context.Add(request);
+                await context.SaveChangesAsync(cancellationToken);
+            }
 
             return new ResponseB();
         }

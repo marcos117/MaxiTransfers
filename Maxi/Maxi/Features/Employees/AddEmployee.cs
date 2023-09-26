@@ -15,7 +15,7 @@ public class AddEmployee
         public string Curp { get; init; } = string.Empty;
         public int Ssn { get; init; }
         public string Phone { get; init; } = string.Empty;
-        public string Nacionality { get; init; } = string.Empty;
+        public string Nationality { get; init; } = string.Empty;
     }
     
     public class Add : IRequestHandler<RequestE, ResponseE>
@@ -26,7 +26,7 @@ public class AddEmployee
             {
                 var request = new EmployeeDto()
                 {
-                    Nacionality = requestE.Nacionality,
+                    Nationality = requestE.Nationality,
                     Name = requestE.Name,
                     Phone = requestE.Phone,
                     EmployeeNumber = requestE.EmployeeNumber,
